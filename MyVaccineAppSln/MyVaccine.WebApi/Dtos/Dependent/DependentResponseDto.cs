@@ -1,6 +1,6 @@
-﻿namespace MyVaccine.WebApi.Dtos.Dependent;
+namespace MyVaccine.WebApi.Dtos.Dependent;
 
-public class DependentResponseDto :DependentRequestDto
+public class DependentResponseDto : DependentRequestDto, IHasId
 {
     public int Id { get; set; }
 }
