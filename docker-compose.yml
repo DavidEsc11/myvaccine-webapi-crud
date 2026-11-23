@@ -1,0 +1,18 @@
+# SQL Server para desarrollo (el mismo contenedor que se usa en el video BONUS de Docker).
+# Se levanta con:  docker compose up -d
+# Queda escuchando en localhost,14330 con usuario sa y la contraseña de abajo.
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: myvaccine-sqlserver
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Abc.123456"
+    ports:
+      - "14330:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+volumes:
+  sqlserver_data:
